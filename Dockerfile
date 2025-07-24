@@ -17,6 +17,6 @@ RUN         useradd -d /app roboshop
 WORKDIR     /app
 RUN         chown roboshop:roboshop /app
 USER        roboshop
-COPY        package.json server.js /app
+COPY        package.json server.js run.sh /app
 RUN         npm install
-ENTRYPOINT  ["node", "/app/server.js"]
+ENTRYPOINT  ["bash", "/app/run.sh"]
